@@ -48,4 +48,8 @@ public class AutorRecebeDadosDto {
 		return new Autor(this.email, this.nome, this.descricao, this.dataDeRegistro);
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 }
