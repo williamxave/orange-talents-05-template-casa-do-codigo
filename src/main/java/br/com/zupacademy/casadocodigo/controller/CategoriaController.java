@@ -11,32 +11,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zupacademy.casadocodigo.dto.AutorRecebeDadosDto;
-import br.com.zupacademy.casadocodigo.model.Autor;
-import br.com.zupacademy.casadocodigo.repositories.AutorRepository;
-import br.com.zupacademy.casadocodigo.validation.NaoDeixaRepitirEmail;	
+import br.com.zupacademy.casadocodigo.dto.CategoriaRecebeDadosDto;
+import br.com.zupacademy.casadocodigo.model.Categoria;
+import br.com.zupacademy.casadocodigo.repositories.CategoriaRepository;
+import br.com.zupacademy.casadocodigo.validation.NaoDeixaRepitirNome;
 
 @RestController
-@RequestMapping("/autor")
-public class AutorController {
-
-	@Autowired
-	private NaoDeixaRepitirEmail  naoDeixaRepitirEmail;
+@RequestMapping("/categoria")
+public class CategoriaController {
 	
 	@Autowired
-	private AutorRepository autorRepository;
+	private NaoDeixaRepitirNome naoDeixaRepitirNome;
+	
+	@Autowired
+	private CategoriaRepository categoriaRepository;
+	
 	
 	@InitBinder
 	public void init(WebDataBinder binder) {
-		binder.addValidators(naoDeixaRepitirEmail);
-		
+		binder.addValidators(naoDeixaRepitirNome);
 	}
-
+	
+	
 	@PostMapping
-	public ResponseEntity<?> cadastrarUmAutor(@Valid @RequestBody AutorRecebeDadosDto autorRecebeDadosDto){
-		Autor obj = autorRecebeDadosDto.toAutor();
-		autorRepository.save(obj);
+	public ResponseEntity<?> cadastrarUmCategoria(@Valid @RequestBody  CategoriaRecebeDadosDto categoriaRecebeDadosDto){
+		Categoria obj = categoriaRecebeDadosDto.toCategoria();
+		categoriaRepository.save(obj);
 		return ResponseEntity.ok().build();
 	}
-
 }

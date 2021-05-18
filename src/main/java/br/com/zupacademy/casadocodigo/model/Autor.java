@@ -23,21 +23,21 @@ public class Autor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotNull
+	@NotEmpty
 	@NotBlank
-	@NotNull 
-	@NotEmpty 
 	@Email 
 	@Column(unique = true)
 	private String email;
-
+	
+	@NotNull
+	@NotEmpty
 	@NotBlank
-	@NotNull
-	@NotEmpty
 	private String nome;
-
-	@NotBlank 
+	
 	@NotNull
 	@NotEmpty
+	@NotBlank 
 	@Length( max = 400)
 	private String descricao;
 
