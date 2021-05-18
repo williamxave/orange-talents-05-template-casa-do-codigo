@@ -28,7 +28,6 @@ public class NaoDeixaRepitirEmail implements Validator {
 		if (errors.hasErrors()) {
 			return;
 		}
-
 		AutorRecebeDadosDto request = (AutorRecebeDadosDto) target;
 		Optional<Autor> autor = autorRepository.findByEmail(request.getEmail());
 		if (autor.isPresent()) {

@@ -35,7 +35,6 @@ public class AutorController {
 	@PostMapping
 	public ResponseEntity<?> cadastrarUmAutor(@Valid @RequestBody  AutorRecebeDadosDto autorRecebeDadosDto){
 		Autor obj = autorRecebeDadosDto.toAutor();
-		
 		autorRepository.save(obj);
 		return ResponseEntity.ok().build();
 	}
