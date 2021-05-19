@@ -11,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 import br.com.zupacademy.casadocodigo.model.Autor;
+import br.com.zupacademy.casadocodigo.validation.genericvalidation.UniqueValue;
 
 public class AutorRecebeDadosDto {
 
@@ -18,6 +19,7 @@ public class AutorRecebeDadosDto {
 	@NotNull
 	@NotEmpty
 	@Email
+	@UniqueValue(domainClass = Autor.class, fieldName = "email")
 	private String email;
 
 	@NotBlank

@@ -27,10 +27,10 @@ public class CategoriaController {
 	private CategoriaRepository categoriaRepository;
 	
 	
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(naoDeixaRepitirNome);
-	}
+	//@InitBinder
+	//public void init(WebDataBinder binder) {
+	//	binder.addValidators(naoDeixaRepitirNome);
+	//}
 	
 	
 	@PostMapping

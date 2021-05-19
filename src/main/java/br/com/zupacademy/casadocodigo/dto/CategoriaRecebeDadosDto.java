@@ -3,10 +3,12 @@ package br.com.zupacademy.casadocodigo.dto;
 import javax.validation.constraints.NotBlank;
 
 import br.com.zupacademy.casadocodigo.model.Categoria;
+import br.com.zupacademy.casadocodigo.validation.genericvalidation.UniqueValue;
 
 public class CategoriaRecebeDadosDto {
 
 	@NotBlank
+	@UniqueValue(domainClass = Categoria.class, fieldName = "nome")
 	private String nome;
 
 	public CategoriaRecebeDadosDto() {

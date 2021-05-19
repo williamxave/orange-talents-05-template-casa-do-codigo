@@ -26,11 +26,11 @@ public class AutorController {
 	@Autowired
 	private AutorRepository autorRepository;
 	
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(naoDeixaRepitirEmail);
+	//@InitBinder
+//	public void init(WebDataBinder binder) {
+	//	binder.addValidators(naoDeixaRepitirEmail);
 		
-	}
+//	}
 
 	@PostMapping
 	public ResponseEntity<?> cadastrarUmAutor(@Valid @RequestBody AutorRecebeDadosDto autorRecebeDadosDto){
