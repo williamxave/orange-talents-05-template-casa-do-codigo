@@ -16,20 +16,14 @@ import br.com.zupacademy.casadocodigo.validation.genericvalidation.UniqueValue;
 public class AutorRecebeDadosDto {
 
 	@NotBlank
-	@NotNull
-	@NotEmpty
 	@Email
 	@UniqueValue(domainClass = Autor.class, fieldName = "email")
 	private String email;
 
 	@NotBlank
-	@NotNull
-	@NotEmpty
 	private String nome;
 
 	@NotBlank
-	@NotNull
-	@NotEmpty
 	@Length(max = 400)
 	private String descricao;
 
