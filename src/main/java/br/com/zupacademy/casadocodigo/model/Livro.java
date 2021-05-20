@@ -80,14 +80,20 @@ public class Livro {
 		this.categoria = categoria;
 	}
 
-	
-
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
 
 	public LocalDate getData() {
 		return data;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
 	}
 
 }
