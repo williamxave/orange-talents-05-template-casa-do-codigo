@@ -72,68 +72,25 @@ public class LivroRecebeDadosDto {
 		this.categoriaId = categoriaId;
 	}
 
-	public Livro toLivro(LivroRecebeDadosDto livroRecebeDadosDto, AutorRepository autorRepository, CategoriaRepository categoriaRepository) {
+	public Livro toLivro(LivroRecebeDadosDto livroRecebeDadosDto, AutorRepository autorRepository,
+			CategoriaRepository categoriaRepository) {
 		Autor autor = autorRepository.findById(livroRecebeDadosDto.getAutorId()).get();
 		Categoria categoria = categoriaRepository.findById(livroRecebeDadosDto.getCategoriaId()).get();
-		
-		Livro livro  = new Livro(isbn, titulo, preco, numeroDePaginas, resumo, sumario, data,autor,categoria);
-		
+
+		Livro livro = new Livro(isbn, titulo, preco, numeroDePaginas, resumo, sumario, data, autor, categoria);
+
 		autor.addLivroNaLista(livro);
 		categoria.addLivrosCategoria(livro);
-		
+
 		return livro;
-	}
-
-	@Deprecated
-	public LivroRecebeDadosDto() {
-	}
-
-	public String getIsbn() {
-		return isbn;
 	}
 
 	public Long getAutorId() {
 		return autorId;
 	}
 
-	public void setAutorId(Long autorId) {
-		this.autorId = autorId;
-	}
-
 	public Long getCategoriaId() {
 		return categoriaId;
-	}
-
-	public void setCategoriaId(Long categoriaId) {
-		this.categoriaId = categoriaId;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public BigDecimal getPreco() {
-		return preco;
-	}
-
-	public Integer getNumeroDePaginas() {
-		return numeroDePaginas;
-	}
-
-	public String getResumo() {
-		return resumo;
-	}
-
-	public String getSumario() {
-		return sumario;
-	}
-
-	public LocalDate getData() {
-		return data;
-	}
-
-	public void setData(LocalDate data) {
-		this.data = data;
 	}
 
 }

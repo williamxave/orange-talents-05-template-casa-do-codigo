@@ -64,7 +64,6 @@ public class LivroController {
 			return ResponseEntity.notFound().build();
 			
 		} else {
-
 			Page<Livro> pageLivro = livroRepository.findById(id, paginacao);
 			Page<LivroRespostaPaginadaDto> livrosComId = LivroRespostaPaginadaDto
 					.deLivroParaLivroRespostaPaginadaDto(pageLivro);
