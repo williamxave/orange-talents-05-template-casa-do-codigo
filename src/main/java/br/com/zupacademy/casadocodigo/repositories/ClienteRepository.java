@@ -3,9 +3,9 @@ package br.com.zupacademy.casadocodigo.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.zupacademy.casadocodigo.model.Pais;
+import br.com.zupacademy.casadocodigo.model.Cliente;
 
 @Repository
-public interface PaisRepository extends CrudRepository<Pais, Long> {
+public interface ClienteRepository extends CrudRepository<Cliente, Long> {
 
 }

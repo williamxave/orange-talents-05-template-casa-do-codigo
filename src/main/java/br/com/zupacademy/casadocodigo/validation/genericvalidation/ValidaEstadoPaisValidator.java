@@ -29,12 +29,11 @@ public class ValidaEstadoPaisValidator implements ConstraintValidator<ValidaEsta
 
 		query.setParameter("nome", estadoRecebeDadosDto.getNome());
 		query.setParameter("idPais", estadoRecebeDadosDto.getIdPais());
-		List<?> list = query.getResultList();
 		
+		List<?> list = query.getResultList();
 		if(!list.isEmpty()) {
 			throw new IllegalStateException();
 		}
-		
 		
 		return list.isEmpty();
 	}
